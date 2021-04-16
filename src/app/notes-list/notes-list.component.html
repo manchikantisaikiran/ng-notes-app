@@ -11,25 +11,25 @@
       placeholder="filter"
     />
   </div>
-  <div class="card">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-      <p class="card-text">
-        Some quick example text to build on the card title and make up the bulk
-        of the card's content. bulk of the card's content. bulk of the card's
-        content. bulk of the card's content. bulk of the card's content.
-      </p>
-      <div class="mb-2">
-        <button class="btn btn-info" type="button" (click)="editNote()">
-          <i class="bi mr-1 bi-pencil-square"></i>Edit
-        </button>
-        <button class="btn btn-danger ml-4" type="button">
-          <i class="bi mr-1 bi-trash-fill"></i>Delete
-        </button>
+  <ng-container *ngFor="let note of notes">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{note.title}}</h5>
+        <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+        <p class="card-text">
+          {{ note.description }}
+        </p>
+        <div class="mb-2">
+          <button class="btn btn-info" type="button" (click)="editNote(note)">
+            <i class="bi mr-1 bi-pencil-square"></i>Edit
+          </button>
+          <button class="btn btn-danger ml-4" type="button" (click)="deleteNote(note)">
+            <i class="bi mr-1 bi-trash-fill"></i>Delete
+          </button>
+        </div>
       </div>
     </div>
-  </div>
+  </ng-container>
   <button
     (click)="addNote()"
     class="add-note-btn btn btn-primary w-100"
