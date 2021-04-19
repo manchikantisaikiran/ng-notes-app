@@ -31,7 +31,7 @@
 }
 
 .card{
-    height: 180px;
+    max-height: 180px;
 }
 
 .card-body{
@@ -39,6 +39,6 @@
 }
 
 .card-text{
-    height: 67px;
+    max-height: 67px;
     overflow: hidden;
 }

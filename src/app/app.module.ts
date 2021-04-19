@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms'
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { NotesListComponent } from './notes-list/notes-list.component';
@@ -17,7 +17,8 @@ import { NotesService } from './notes.service'
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [NotesService],
   bootstrap: [AppComponent]

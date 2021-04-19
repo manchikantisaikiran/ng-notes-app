@@ -13,7 +13,7 @@ export class FormComponent implements OnInit {
 
   @Input() isDisplayAddForm!: boolean;
   @Output() cancelProcess = new EventEmitter<boolean>()
-
+  isFormSubmitted:boolean = false;
   noteToEdit!: Note;
 
   form = this.fb.group({
@@ -43,7 +43,7 @@ export class FormComponent implements OnInit {
 
   addNote() {
     console.log(this.form)
-
+    this.isFormSubmitted = true;
     if (this.form.status === 'INVALID') {
       return;
     }
@@ -57,7 +57,7 @@ export class FormComponent implements OnInit {
   }
 
   editNote() {
-    console.log('came to edit')
+    this.isFormSubmitted = true;
     if (this.form.status === 'INVALID') {
       return;
     }
@@ -70,6 +70,7 @@ export class FormComponent implements OnInit {
   }
 
   cancelProcessFunc() {
+    this.isFormSubmitted = false;
     this.cancelProcess.emit(false)
   }
 
